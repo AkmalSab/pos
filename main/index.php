@@ -91,7 +91,6 @@ and get more free JavaScript, CSS and DHTML scripts! */
 </head>
 
 <body>
-	<?php include('navfixed.php'); ?>
 	<?php
 	$position = $_SESSION['SESS_LAST_NAME'];
 	if ($position == 'cashier') {
@@ -113,6 +112,7 @@ and get more free JavaScript, CSS and DHTML scripts! */
 							<li><a href="products.php"><i class="icon-list-alt icon-2x"></i> Products</a> </li>
 							<li><a href="customer.php"><i class="icon-group icon-2x"></i> Customers</a> </li>
 							<li><a href="supplier.php"><i class="icon-group icon-2x"></i> Suppliers</a> </li>
+							<li><a href="breakeven.php"><i class="icon-money icon-2x"></i> Break Even Point</a> </li>
 							<li><a href="salesreport.php?d1=0&d2=0"><i class="icon-bar-chart icon-2x"></i> Sales Report</a> </li>
 							<br><br><br><br><br><br>
 							<li>

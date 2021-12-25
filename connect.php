@@ -1,9 +1,9 @@
 <?php
 /* Database config */
-$db_host		= 'localhost';
+$db_host		= 'localhost:3307';
 $db_user		= 'root';
 $db_pass		= '';
-$db_database	= 'sales'; 
+$db_database	= 'pos'; 
 
 /* End config */
 
