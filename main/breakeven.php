@@ -140,26 +140,26 @@ and get more free JavaScript, CSS and DHTML scripts! */
                 </ul>
 
                 <hr>
-                <form>
-                    <div id="ac">
-                        <span>Selling Price : </span><input type="text" style="width:265px; height:30px;" id="Selling_Price" required /><br>
-                        <span>Variable Cost : </span><input type="text" style="width:265px; height:30px;" id="Variable_Cost" /><br>
-                        <div style="float:left; margin-right:10px;">
-                            <button id="contribution" class="btn btn-success btn-block btn-large" style="width:267px;"><i class="icon icon-save icon-large"></i> Calculate Contribution Margin</button>
-                        </div>
-                        <br><br><br>
-                        <span>Fixed Cost : </span><input type="text" style="width:265px; height:30px;" id="Fixed_Cost" /><br>
-                        <span>Contribution Margin : </span><input type="text" style="width:265px; height:30px;" disabled id="Contribution_Margin" /><br>
-                        <span>BEP : </span><input type="text" style="width:265px; height:30px;" disabled id="bep_value" /><br>
-                        <div style="float:left; margin-right:10px;">
-                            <button id="bep" class="btn btn-success btn-block btn-large" style="width:267px;"><i class="icon icon-save icon-large"></i> Calculate BEP(unit)</button>
-                        </div>
-                        <div style="float:left; margin-right:10px;">
-                            <button id="bep" type="reset" class="btn btn-warning btn-block btn-large" style="width:267px;"><i class="icon icon-save icon-large"></i> Reset</button>
-                        </div>
 
+                <div id="ac">
+                    <span>Selling Price : </span><input type="text" style="width:265px; height:30px;" id="Selling_Price" required /><br>
+                    <span>Variable Cost : </span><input type="text" style="width:265px; height:30px;" id="Variable_Cost" /><br>
+                    <div style="float:left; margin-right:10px;">
+                        <button id="contribution" class="btn btn-success btn-block btn-large" style="width:267px;"><i class="icon icon-save icon-large"></i> Calculate Contribution Margin</button>
                     </div>
-                </form>
+                    <br><br><br>
+                    <span>Fixed Cost : </span><input type="text" style="width:265px; height:30px;" id="Fixed_Cost" /><br>
+                    <span>Contribution Margin : </span><input type="text" style="width:265px; height:30px;" disabled id="Contribution_Margin" /><br>
+                    <span>BEP : </span><input type="text" style="width:265px; height:30px;" disabled id="bep_value" /><br>
+                    <div style="float:left; margin-right:10px;">
+                        <button id="bep" class="btn btn-success btn-block btn-large" style="width:267px;"><i class="icon icon-save icon-large"></i> Calculate BEP(unit)</button>
+                    </div>
+                    <div style="float:left; margin-right:10px;">
+                        <button id="reset" type="reset" class="btn btn-warning btn-block btn-large" style="width:267px;"><i class="icon icon-save icon-large"></i> Reset</button>
+                    </div>
+
+                </div>
+
 
 
 
@@ -174,15 +174,28 @@ and get more free JavaScript, CSS and DHTML scripts! */
         $(function() {
 
 
+            // contribution calculation
             $("#contribution").click(function() {
                 var ContributionMargin = $("#Selling_Price").val() - $("#Variable_Cost").val();
                 alert(ContributionMargin);
                 $("#Contribution_Margin").val(ContributionMargin);
             });
+
+            // bep calculation
             $("#bep").click(function() {
                 var BEP = $("#Fixed_Cost").val() / $("#Contribution_Margin").val();
                 alert(BEP);
                 $("#bep_value").val(BEP);
+            });
+
+            // clear input
+            $("#reset").click(function() {
+                $("#Selling_Price").val('');
+                $("#Variable_Cost").val('');
+                $("#Fixed_Cost").val('');
+                $("#Contribution_Margin").val('');
+                $("#bep_value").val('');
+
             });
 
         });
